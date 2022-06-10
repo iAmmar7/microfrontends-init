@@ -9,7 +9,7 @@ const applications = constructApplications({
     return System.import(name);
   },
 });
-const layoutEngine = constructLayoutEngine({ routes, applications });
+const layoutEngine = constructLayoutEngine({ routes, applications, active: false });
 
 applications.forEach(registerApplication);
 

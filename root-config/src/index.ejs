@@ -52,8 +52,9 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-          "@venturedive/root-config": "//localhost:9000/venturedive-root-config.js"
+          "@venturedive/root-config": "//localhost:9000/venturedive-root-config.js",
+          "@venturedive/style-guide": "//localhost:8080/venturedive-style-guide.js",
+          "@venturedive/navbar": "//localhost:8081/venturedive-navbar.js"
         }
       }
     </script>
@@ -77,7 +78,6 @@
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <script>
-      System.import('@single-spa/welcome');
       System.import('@venturedive/root-config');
       System.import('@venturedive/style-guide');
     </script>
