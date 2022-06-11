@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const routes = [
   {
+    name: 'Home',
+    href: '/',
+  },
+  {
     name: 'Auth',
     href: '/auth',
   },

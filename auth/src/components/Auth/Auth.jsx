@@ -70,7 +70,7 @@ function Auth() {
   };
 
   return (
-    <main className='border flex flex-col items-center justify-center w-full flex-1 text-center min-h-screen py-2 sm:bg-transparent bg-gradient-to-br from-red-100 bg-red-500 sm:from-white sm:to-gray-100'>
+    <main className='border bg-home flex flex-col items-center justify-center w-full flex-1 text-center min-h-screen py-2'>
       <Toast message={formState.error} />
       <div className='max-w-4xl w-full bg-white rounded-none md:rounded-2xl shadow-2xl flex flex-row relative'>
         <div className='w-full sm:w-3/5 px-5 pt-5'>

@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   theme: {
     extend: {
@@ -18,6 +20,7 @@ module.exports = {
       white: 'var(--color-white)',
       black: 'var(--color-black)',
       overlay: 'var(--color-overlay)',
+      ...colors,
     },
   },
   variants: {},
