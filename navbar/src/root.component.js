@@ -15,17 +15,17 @@ const routes = [
 export default function Root(props) {
   return (
     <Router>
-      <div className='navbar h-16 flex items-center justify-between px-6 bg-primary text-white'>
-        <div className='routes flex items-center justify-between'>
+      <div className='h-14 flex items-center justify-between px-6 bg-primary text-white font-medium'>
+        <div className='flex items-center justify-between gap-x-4'>
           {routes.map((link) => {
             return (
-              <Link key={link.href} className='p-6' to={link.href}>
+              <Link key={link.href} to={link.href} className='hover:text-danger transition duration-300'>
                 {link.name}
               </Link>
             );
           })}
         </div>
-        <div className='route-external flex items-center justify-between'>
+        <div className='flex items-center justify-between hover:text-warning transition duration-300'>
           <a href='https://github.com/iAmmar7/microfrontends-task-app' className='externalLink'>
             Github project
           </a>

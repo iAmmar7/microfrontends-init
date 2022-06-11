@@ -1,4 +1,10 @@
 {
   "parser": "babel-eslint",
-  "extends": ["react-important-stuff", "plugin:prettier/recommended"]
+  "extends": [
+    "react-important-stuff",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "singleQuote": true
+  }
 }

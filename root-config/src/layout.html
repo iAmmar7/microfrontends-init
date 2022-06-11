@@ -1,8 +1,8 @@
 <single-spa-router>
-  <!-- <nav class="topnav">
+  <nav class="topnav">
     <application name="@venturedive/navbar"></application>
-  </nav> -->
-  <div class="main-content border">
+  </nav>
+  <div class="relative">
     <!-- <route path="auth">
       <application name="@venturedive/auth"></application>
     </route> -->
@@ -11,15 +11,16 @@
     </route>
     <redirect from="/earth" to="/planets"></redirect> -->
     <route default>
-      <div class="home-page">
-        <div class="app-hero">
-          <h1>Micro<span>Frontends</span></h1>
+      <div class="w-full h-screen border bg-home">
+        <div
+          class="bg-white max-w-xl shadow-lg drop-shadow-lg rounded-3xl p-6 text-center text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <h1 class="text-5xl mb-3 font-medium">Micro<span class="text-danger">Frontends</span></h1>
           <p>
             This application is based on microfrontends. It is built with
-            <span>single-spa</span> library using <span>React</span> and
-            <span>Angular</span>. Each nav link above takes you to a different
-            microfrontend. Infact, the navbar is itself a separate
-            microfrontend.
+            <span class="text-danger">single-spa</span> library using <span class="text-danger">React</span> and
+            <span class="text-danger">Angular</span>. Each nav link above takes you to a different microfrontend.
+            Infact, the navbar is itself a separate microfrontend.
           </p>
         </div>
       </div>
