@@ -3,21 +3,23 @@
     <application name="@venturedive/navbar"></application>
   </nav>
   <div class="main-content mt-16">
-    <!-- <route path="people">
-      <application name="@react-mf/people"></application>
+    <route path="auth">
+      <application name="@venturedive/auth"></application>
     </route>
-    <route path="planets">
-      <application name="@react-mf/planets"></application>
+    <!-- <route path="planets">
+      <application name="@venturedive/planets"></application>
     </route>
     <redirect from="/earth" to="/planets"></redirect> -->
     <route default>
-      <div class="app-hero">
-        <h1>Micro<span>Frontends</span></h1>
-        <p class="max-w-md text-danger">
-          This application is based on microfrontends. It is built with <span>single-spa</span> library using
-          <span>React</span> and <span>Angular</span>. Each nav link above takes you to a different microfrontend.
-          Infact, the navbar is itself a separate microfrontend.
-        </p>
+      <div class="home-page">
+        <div class="app-hero">
+          <h1>Micro<span>Frontends</span></h1>
+          <p class="max-w-md text-danger">
+            This application is based on microfrontends. It is built with <span>single-spa</span> library using
+            <span>React</span> and <span>Angular</span>. Each nav link above takes you to a different microfrontend.
+            Infact, the navbar is itself a separate microfrontend.
+          </p>
+        </div>
       </div>
     </route>
   </div>

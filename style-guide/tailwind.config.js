@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    './src/**/*.{html,js,ejs}',
-    '@venturedive/root-config/src/**/*.{html,js,ejs}',
-    '@venturedive/navbar/src/**/*.{html,js,ejs}',
-  ],
+  content: ['./src/**/*.{html,js,ejs}'],
   theme: {
     colors: {
       primary: 'var(--color-primary)',
