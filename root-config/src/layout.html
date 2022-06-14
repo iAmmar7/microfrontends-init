@@ -6,16 +6,16 @@
     <route path="auth">
       <application name="@venturedive/auth"></application>
     </route>
-    <!-- <route path="planets">
-      <application name="@venturedive/planets"></application>
+    <route path="attendance">
+      <application name="@venturedive/attendance"></application>
     </route>
-    <redirect from="/earth" to="/planets"></redirect> -->
+    <redirect from="/" to="/home"></redirect>
     <route default>
       <div class="w-full h-screen border bg-home">
         <div
-          class="bg-white max-w-xl shadow-lg drop-shadow-lg rounded-3xl p-6 text-center text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          class="bg-gray-100 max-w-xl shadow-lg drop-shadow-lg rounded-3xl px-10 py-14 text-center text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          <h1 class="text-5xl mb-3 font-medium">Micro<span class="text-danger">Frontends</span></h1>
+          <h1 class="text-5xl mb-6 font-medium">Micro<span class="text-danger">Frontends</span></h1>
           <p>
             This application is based on microfrontends. It is built with
             <span class="text-danger">single-spa</span> library using <span class="text-danger">React</span> and

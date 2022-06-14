@@ -11,8 +11,8 @@ const routes = [
     href: '/auth',
   },
   {
-    name: 'Tasks',
-    href: '/tasks',
+    name: 'Attendance',
+    href: '/attendance',
   },
 ];
 
