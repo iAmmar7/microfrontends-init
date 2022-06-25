@@ -2,7 +2,7 @@
 
 ## Install the npm packages
 
-Navigate to the root-config, style-guide folder and run the command
+Navigate to the root-config, styleguide, auth, navbar, attendance folder and run the command
 
 ```js
 npm install
@@ -12,7 +12,7 @@ More microfrontends are currently being build!!
 
 ## Run the application
 
-- Navigate to the root-config, style-guide folder and run the below command
+- Navigate to the root-config, styleguide, auth, navbar, attendance folder and run the below command
 
   ```js
   npm start
