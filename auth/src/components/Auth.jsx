@@ -5,12 +5,12 @@ import { Toast } from '@venturedive/styleguide';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import SwitchAuth from './SwitchAuth';
-import { AuthService } from '../../services';
+import { AuthService } from '../services';
 
 const initialState = {
-  name: 'user1',
-  email: 'user1@gmail.com',
-  password: '12345',
+  name: '',
+  email: '',
+  password: '',
   error: '',
 };
 
@@ -76,8 +76,8 @@ function Auth() {
         <div className='w-full sm:w-3/5 px-5 pt-5'>
           <div className='flex justify-between items-center'>
             <div className='text-left font-bold text-xl'>
-              <p>
-                Venture<span className='text-red-500'>Dive</span>
+              <p className='text-primary'>
+                Venture<span className='text-danger'>Dive</span>
               </p>
             </div>
             <div className='inline sm:hidden text-sm'>
@@ -117,7 +117,7 @@ function Auth() {
             </Transition>
           )}
         </div>
-        <div className='w-2/5 bg-red-500 text-white rounded-none md:rounded-tr-2xl md:rounded-br-2xl py-36 px-12 hidden sm:block'>
+        <div className='w-2/5 bg-primary text-white rounded-none md:rounded-tr-2xl md:rounded-br-2xl py-36 px-12 hidden sm:block'>
           <SwitchAuth handleToggleMode={handleToggleMode} />
         </div>
       </div>
