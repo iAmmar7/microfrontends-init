@@ -1,11 +1,12 @@
 import React, { useState, useReducer } from 'react';
 import { Transition } from '@headlessui/react';
+
 import { Toast } from '@venturedive/styleguide';
+import { AuthService } from '@venturedive/api';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import SwitchAuth from './SwitchAuth';
-import { AuthService } from '../services';
 
 const initialState = {
   name: '',
