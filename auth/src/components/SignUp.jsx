@@ -3,7 +3,7 @@ import React from 'react';
 import { FaRegEnvelope, FaRegUserCircle } from 'react-icons/fa';
 import { MdLockOutline } from 'react-icons/md';
 
-import { TextField } from '@venturedive/styleguide';
+import { TextField, Button } from '@venturedive/styleguide';
 
 function SignUp(props) {
   const { formState, handleChange, handleSignUp } = props;
@@ -50,12 +50,9 @@ function SignUp(props) {
             Remember me
           </label>
         </div>
-        <button
-          className='border-2 border-danger text-danger rounded-full px-12 py-2 inline-block font-semibold hover:bg-danger hover:text-white transition duration-300'
-          type='submit'
-        >
+        <Button variant='secondary' type='submit'>
           Sign up
-        </button>
+        </Button>
       </form>
     </div>
   );

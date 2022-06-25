@@ -2,12 +2,13 @@ import React, { useState, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
-import { Toast } from '@venturedive/styleguide';
-import { AuthService } from '@venturedive/api';
+import { Toast, Button } from '@venturedive/styleguide';
+import { AuthService, setToLocalStorage, isAuthenticated } from '@venturedive/api';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import SwitchAuth from './SwitchAuth';
+import { useMemo } from 'react';
 
 const initialState = {
   name: '',
@@ -29,6 +30,8 @@ function Auth() {
   const [signInMode, setSignInMode] = useState(true);
   const [formState, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
+
+  const isAuth = useMemo(() => isAuthenticated(), []);
 
   const handleToggleMode = () => setSignInMode(!signInMode);
 
@@ -67,6 +70,7 @@ function Auth() {
       };
       const signIn = await AuthService.signIn(payload);
       console.log('signIn result', signIn);
+      setToLocalStorage('access_token', signIn.access_token);
       navigate('/attendance');
     } catch (error) {
       console.log('error', error);
@@ -77,58 +81,78 @@ function Auth() {
     }
   };
 
+  const handleSignOut = () => {
+    AuthService.signOut();
+    navigate('/');
+  };
+
   return (
     <main className='border bg-home flex flex-col items-center justify-center w-full flex-1 text-center min-h-screen py-2'>
       <Toast message={formState.error} />
-      <div className='max-w-4xl w-full bg-white rounded-none md:rounded-2xl shadow-2xl flex flex-row relative'>
-        <div className='w-full sm:w-3/5 px-5 pt-5'>
-          <div className='flex justify-between items-center'>
+      {isAuth ? (
+        <div className='w-96 bg-white rounded-none md:rounded-2xl shadow-2xl flex flex-row relative'>
+          <div className='w-full h-96 p-5'>
             <div className='text-left font-bold text-xl'>
               <p className='text-primary'>
                 Venture<span className='text-danger'>Dive</span>
               </p>
             </div>
-            <div className='inline sm:hidden text-sm'>
-              <button className='px-2' onClick={handleToggleMode}>
-                {signInMode ? 'Sign up' : 'Sign in'}
-              </button>
+            <div className='w-full h-full flex items-center justify-center'>
+              <Button onClick={handleSignOut}>Log out</Button>
             </div>
           </div>
-          {signInMode && (
-            <Transition
-              as='div'
-              appear={true}
-              show={signInMode}
-              enter='transition-opacity duration-150'
-              enterFrom='opacity-0'
-              enterTo='opacity-100'
-              leave='transition-opacity duration-300'
-              leaveFrom='opacity-100'
-              leaveTo='opacity-0'
-            >
-              <SignIn formState={formState} handleChange={handleChange} handleSignIn={handleSignIn} />
-            </Transition>
-          )}
-          {!signInMode && (
-            <Transition
-              as='div'
-              appear={true}
-              show={!signInMode}
-              enter='transition-opacity duration-150'
-              enterFrom='opacity-0'
-              enterTo='opacity-100'
-              leave='transition-opacity duration-300'
-              leaveFrom='opacity-100'
-              leaveTo='opacity-0'
-            >
-              <SignUp formState={formState} handleChange={handleChange} handleSignUp={handleSignUp} />
-            </Transition>
-          )}
         </div>
-        <div className='w-2/5 bg-primary text-white rounded-none md:rounded-tr-2xl md:rounded-br-2xl py-36 px-12 hidden sm:block'>
-          <SwitchAuth handleToggleMode={handleToggleMode} />
+      ) : (
+        <div className='max-w-4xl w-full bg-white rounded-none md:rounded-2xl shadow-2xl flex flex-row relative'>
+          <div className='w-full sm:w-3/5 px-5 pt-5'>
+            <div className='flex justify-between items-center'>
+              <div className='text-left font-bold text-xl'>
+                <p className='text-primary'>
+                  Venture<span className='text-danger'>Dive</span>
+                </p>
+              </div>
+              <div className='inline sm:hidden text-sm'>
+                <button className='px-2' onClick={handleToggleMode}>
+                  {signInMode ? 'Sign up' : 'Sign in'}
+                </button>
+              </div>
+            </div>
+            {signInMode && (
+              <Transition
+                as='div'
+                appear={true}
+                show={signInMode}
+                enter='transition-opacity duration-150'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='transition-opacity duration-300'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'
+              >
+                <SignIn formState={formState} handleChange={handleChange} handleSignIn={handleSignIn} />
+              </Transition>
+            )}
+            {!signInMode && (
+              <Transition
+                as='div'
+                appear={true}
+                show={!signInMode}
+                enter='transition-opacity duration-150'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='transition-opacity duration-300'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'
+              >
+                <SignUp formState={formState} handleChange={handleChange} handleSignUp={handleSignUp} />
+              </Transition>
+            )}
+          </div>
+          <div className='w-2/5 bg-primary text-white rounded-none md:rounded-tr-2xl md:rounded-br-2xl py-36 px-12 hidden sm:block'>
+            <SwitchAuth handleToggleMode={handleToggleMode} />
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }

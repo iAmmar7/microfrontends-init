@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
+import { history } from '@venturedive/api';
+
 const routes = [
   {
     name: 'Home',
@@ -18,7 +20,7 @@ const routes = [
 
 export default function Root(props) {
   return (
-    <Router>
+    <Router history={history}>
       <div className='h-14 flex items-center justify-between px-6 bg-primary text-white font-medium'>
         <div className='flex items-center justify-between gap-x-4'>
           {routes.map((link) => {

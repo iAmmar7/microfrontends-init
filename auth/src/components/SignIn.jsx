@@ -3,7 +3,7 @@ import React from 'react';
 import { FaRegEnvelope } from 'react-icons/fa';
 import { MdLockOutline } from 'react-icons/md';
 
-import { TextField } from '@venturedive/styleguide';
+import { TextField, Button } from '@venturedive/styleguide';
 
 function SignIn(props) {
   const { formState, handleChange, handleSignIn } = props;
@@ -43,12 +43,9 @@ function SignIn(props) {
             Forgot password?
           </a>
         </div>
-        <button
-          className='border-2 border-danger text-danger rounded-full px-12 py-2 inline-block font-semibold hover:bg-danger hover:text-white transition duration-300'
-          type='submit'
-        >
+        <Button variant='secondary' type='submit'>
           Sign in
-        </button>
+        </Button>
       </form>
     </div>
   );

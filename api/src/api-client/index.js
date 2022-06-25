@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import errorMapper from './errorMapper';
+import history from '../history';
 import { BASE_URL } from './urls';
 
 const CONTENT_TYPE = {
@@ -51,7 +52,7 @@ export default class API {
       },
       (error) => {
         if (error.response?.status === 401) {
-          window.history.pushState('/');
+          history.push('/');
         }
         throw errorMapper(error);
       },
