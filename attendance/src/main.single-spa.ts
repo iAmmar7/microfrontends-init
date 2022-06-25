@@ -16,6 +16,14 @@ if (environment.production) {
   enableProdMode();
 }
 
+// @TODO: Remove this
+// This is temporary. We should handle this using @venturedive/api functions
+const token = localStorage.getItem('access_token');
+if (!token) {
+  console.log(window.location);
+  window.location.href = window.location.origin + '/auth';
+}
+
 const lifecycles = singleSpaAngular({
   bootstrapFunction: (singleSpaProps) => {
     singleSpaPropsSubject.next(singleSpaProps);
