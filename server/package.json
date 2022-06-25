@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A dummy server for microfrontends",
+  "main": "server.js",
+  "scripts": {
+    "json": "json-server --watch db.json --port 5000",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/iammar7-vd/server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/iammar7-vd/server/issues"
+  },
+  "homepage": "https://bitbucket.org/iammar7-vd/server#readme",
+  "devDependencies": {
+    "json-server": "^0.17.0",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
