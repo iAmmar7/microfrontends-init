@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
 import { Toast } from '@venturedive/styleguide';
@@ -27,6 +28,7 @@ function reducer(state, action) {
 function Auth() {
   const [signInMode, setSignInMode] = useState(true);
   const [formState, dispatch] = useReducer(reducer, initialState);
+  const navigate = useNavigate();
 
   const handleToggleMode = () => setSignInMode(!signInMode);
 
@@ -64,9 +66,14 @@ function Auth() {
         password: formState.password,
       };
       const signIn = await AuthService.signIn(payload);
-      console.log('rsignIn esult', signIn);
+      console.log('signIn result', signIn);
+      navigate('/attendance');
     } catch (error) {
       console.log('error', error);
+      dispatch({
+        type: 'change',
+        payload: { name: 'error', value: error.message },
+      });
     }
   };
 
