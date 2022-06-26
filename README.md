@@ -29,3 +29,5 @@ npm install
 - Carefully check the PORT of your applications and update it accordingly in the import map defined in root-config.
 
 - There are two navbar microfrontends, one is built with React and the other one is built with VueJS.
+
+- Server is created using the json-server.
