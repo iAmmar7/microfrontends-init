@@ -1,5 +1,7 @@
 # Task Management app using MicroFrontends with Single-SPA
 
+## Built with :dizzy: React, Angular, and Vue :dizzy:
+
 ## Install the npm packages
 
 Navigate to the root-config, styleguide, api, auth, attendance, navbar-vue, server folder and run the command
