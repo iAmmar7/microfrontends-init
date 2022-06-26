@@ -51,6 +51,8 @@ function Auth() {
       };
       const signUp = await AuthService.signUp(payload);
       console.log('signUp result', signUp);
+      setToLocalStorage('access_token', signUp.access_token);
+      navigate('/attendance');
     } catch (error) {
       console.log('error', error);
       dispatch({
@@ -149,7 +151,7 @@ function Auth() {
             )}
           </div>
           <div className='w-2/5 bg-primary text-white rounded-none md:rounded-tr-2xl md:rounded-br-2xl py-36 px-12 hidden sm:block'>
-            <SwitchAuth handleToggleMode={handleToggleMode} />
+            <SwitchAuth handleToggleMode={handleToggleMode} signInMode={signInMode} />
           </div>
         </div>
       )}

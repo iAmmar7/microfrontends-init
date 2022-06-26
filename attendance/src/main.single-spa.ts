@@ -17,7 +17,7 @@ if (environment.production) {
 }
 
 // @TODO: Remove this
-// This is temporary. We should handle this using @venturedive/api functions
+// This is temporary. We should handle this using @venturedive/api history
 const token = localStorage.getItem('access_token');
 if (!token) {
   console.log(window.location);

@@ -39,15 +39,15 @@ server.post('/auth/register', (req, res) => {
   const { email, password } = req.body;
 
   if (isAuthenticated({ email, password }) === true) {
-    const status = 401;
+    const status = 400;
     const message = 'Email and Password already exist';
     res.status(status).json({ status, message });
     return;
   }
 
-  fs.readFile('./users.json', (err, data) => {
+  fs.readFile('./db/users.json', (err, data) => {
     if (err) {
-      const status = 401;
+      const status = 400;
       const message = err;
       res.status(status).json({ status, message });
       return;
@@ -65,10 +65,10 @@ server.post('/auth/register', (req, res) => {
       email: email,
       password: password,
     }); //add some data
-    const writeData = fs.writeFile('./users.json', JSON.stringify(parsedData), (err, result) => {
+    const writeData = fs.writeFile('./db/users.json', JSON.stringify(parsedData), (err, result) => {
       // WRITE
       if (err) {
-        const status = 401;
+        const status = 400;
         const message = err;
         res.status(status).json({ status, message });
         return;

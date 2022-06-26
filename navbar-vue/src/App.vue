@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar v-bind:projectLink="projectLink" />
+    <Navbar />
   </div>
 </template>
 
