@@ -1,13 +1,14 @@
 <single-spa-router>
   <nav class="topnav">
-    <application name="@venturedive/navbar"></application>
+    <application name="@venturedive/navbar-vue" props="projectLink"></application>
+    <!-- <application name="@venturedive/navbar"></application> -->
   </nav>
   <div class="relative">
     <route path="auth">
       <application name="@venturedive/auth"></application>
     </route>
     <route path="attendance">
-      <application name="@venturedive/attendance"></application>
+      <application name="@venturedive/attendance" loader="customLoader" error="customError"></application>
     </route>
     <redirect from="/" to="/home"></redirect>
     <route default>

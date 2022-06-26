@@ -16,6 +16,10 @@ const routes = [
     name: 'Attendance',
     href: '/attendance',
   },
+  {
+    name: 'Vue',
+    href: '/vue',
+  },
 ];
 
 export default function Root(props) {
@@ -32,9 +36,7 @@ export default function Root(props) {
           })}
         </div>
         <div className='flex items-center justify-between hover:text-warning transition duration-300'>
-          <a href='https://github.com/iAmmar7/microfrontends-task-app' className='externalLink'>
-            Github project
-          </a>
+          <a href='https://github.com/iAmmar7/microfrontends-task-app'>Github project</a>
         </div>
       </div>
     </Router>
