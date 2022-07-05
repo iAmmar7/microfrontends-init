@@ -37,5 +37,5 @@ npm install
 - React <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
 - Angular <img alt="Angular" src="https://img.shields.io/badge/-Angular-C4002F?style=flat-square&logo=angular&logoColor=white" />
 - Vue <img alt="Vue" src="https://img.shields.io/badge/-VueJS-42B883?style=flat-square&logo=Vue&logoColor=white" />
-- Tailwind <img alt="Tailwind" src="https://img.shields.io/badge/-Tailwind-37BDF7?style=flat-square&logo=tailwind&logoColor=white" />
+- Tailwind <img alt="Tailwind" src="https://img.shields.io/badge/-Tailwind-37BDF7?style=flat-square&logo=tailwindcss&logoColor=white" />
 - JSON Server <img alt="JSON Server" src="https://img.shields.io/badge/-JSON%20Server-1E3A8A?style=flat-square&logo=json&logoColor=white" />
