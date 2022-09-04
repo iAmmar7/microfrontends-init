@@ -19,6 +19,7 @@ A Single-SPA based micro-frontends application developed with React, Angular, an
 - Angular <img alt="Angular" src="https://img.shields.io/badge/-Angular-C4002F?style=flat-square&logo=angular&logoColor=white" />
 - Vue <img alt="Vue" src="https://img.shields.io/badge/-VueJS-42B883?style=flat-square&logo=Vue&logoColor=white" />
 - Tailwind <img alt="Tailwind" src="https://img.shields.io/badge/-Tailwind-37BDF7?style=flat-square&logo=tailwindcss&logoColor=white" />
+- Node JS <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
 - JSON Server <img alt="JSON Server" src="https://img.shields.io/badge/-JSON%20Server-1E3A8A?style=flat-square&logo=json&logoColor=white" />
 
 ## How to run
