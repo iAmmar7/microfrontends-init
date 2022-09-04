@@ -1,8 +1,6 @@
 # Microfrontends Init
 
-A mircro-frontends application using Single SPA
-
-Built with :dizzy: React, Angular, and Vue :dizzy:
+A Single-SPA based micro-frontends application developed with React, Angular, and Vue.
 
 ## Featues
 - **3 microfrontends** running inside the root-config. :fire:
